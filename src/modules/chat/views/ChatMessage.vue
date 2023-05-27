@@ -12,25 +12,28 @@
         <li
           v-for="message in filteredMockMessages"
           :key="message.id"
-          class="message-item bg-gray-100 p-2 my-5 mx-4 max-w-[380px] rounded-md"
+          class="message-item bg-gray-100 relative px-2 py-3 my-5 mx-4 max-w-[380px] rounded-md"
           :class="{
             'bg-green-300': message.is_sender === 'false',
           }"
         >
           {{ message.message }}
+          <p class="absolute bottom-1 right-1 pt-8 text-xs">
+            {{ message.time }}
+          </p>
         </li>
       </ul>
     </div>
 
-    <div class="send-message flex align-center justify-between">
+    <form
+      @submit.prevent="sendMessage"
+      class="send-message flex align-center justify-between"
+    >
       <input v-model="newMessage" placeholder="Send messages.." />
-      <div
-        @click="sendMessage"
-        class="send-button bg-green-400 p-4 cursor-pointer"
-      >
+      <div type="submit" class="send-button bg-green-400 p-4 cursor-pointer">
         <i class="fab fa-telegram-plane" color="white"></i>
       </div>
-    </div>
+    </form>
   </div>
 </template>
 
@@ -50,7 +53,10 @@ const filteredMockMessages = computed(() => {
 
   return mockMessage.filter((message: any) => message.userId == userId);
 });
-console.log(filteredMockMessages, "filtered");
+
+const now = new Date();
+const hours = now.getHours();
+const minutes = now.getMinutes();
 
 const sendMessage = () => {
   if (newMessage.value) {
@@ -59,15 +65,13 @@ const sendMessage = () => {
       userId: String(Number(route.params.id)),
       message: newMessage.value,
       created_at: "2023-05-25",
-      time: "09:15:42",
+      time: `${hours}:${minutes}`,
       is_sender: "false",
     };
 
-    // mockMessage.push(sentNewMessage);
     filteredMockMessages.value.push(sentNewMessage);
 
     newMessage.value = "";
-    // console.log(mockMessage);
   }
 };
 </script>
