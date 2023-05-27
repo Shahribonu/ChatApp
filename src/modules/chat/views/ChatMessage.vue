@@ -11,24 +11,26 @@
 
     <div>
       <div class="message-main max-h-[600px] overflow-y-scroll relative">
-        <ul>
+        <ul class="flex flex-col m-0">
           <li
             v-for="message in filteredMockMessages"
             :key="message.id"
-            class="message-item bg-gray-100 relative px-2 py-3 my-5 mx-4 max-w-[380px] rounded-md"
+            class="message-item bg-gray-100 relative pt-4 pb-6 px-4 mx-4 my-2 max-w-[380px] rounded-md"
             :class="{
-              'bg-green-300 ': message.is_sender === 'false',
+              'bg-green-300 self-end ': message.is_sender === 'false',
             }"
           >
-            {{ message.message }}
-            <p class="absolute bottom-1 right-1 pt-8 text-xs">
-              {{ message.time }}
-            </p>
+            <div class="">
+              {{ message.message }}
+              <p class="absolute bottom-1 right-1 mt-4 text-xs">
+                {{ message.time }}
+              </p>
+            </div>
           </li>
         </ul>
       </div>
 
-      <div class="">
+      <div class="mt-3">
         <form
           @submit.prevent="sendMessage"
           class="send-message flex align-center justify-between"
