@@ -22,7 +22,6 @@
         <div class="content">
           <div class="title font-semibold">{{ chat.name }}</div>
           <div class="message">{{ chat.lastMessage }}</div>
-          <!-- <div>{{ mockMessage[index].message }}</div> -->
         </div>
       </li>
     </ul>
@@ -32,7 +31,7 @@
 <script lang="ts" setup>
 import { ref, computed } from "vue";
 import { useChatStore } from "../chat.store";
-import { useRouter, useRoute } from "vue-router";
+import { useRouter } from "vue-router";
 import { Chat } from "../data";
 import mockMessage from "../mockMessages.json";
 
@@ -41,7 +40,7 @@ console.log(mockMessage, "mockMessage");
 const searchText = ref("");
 const chatStore = useChatStore();
 const router = useRouter();
-const route = useRoute();
+// const route = useRoute();
 const chats: Chat[] = chatStore.getChats;
 
 const filteredChats = computed(() => {

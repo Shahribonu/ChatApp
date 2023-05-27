@@ -2,7 +2,7 @@
   <div class="sidebar py-4 px-4 w-[250px] shadow-md">
     <div class="profile flex flex-col items-center">
       <img src="../assets/images/profile.png" alt="profile" />
-      <h2 class="text-xl font-semibold">Shahribonu</h2>
+      <h2 class="text-xl font-semibold">{{ authStore.getCurrentUser }}</h2>
     </div>
 
     <ul class="py-5 mt-5 relative">
@@ -25,8 +25,10 @@
 import { ref } from "vue";
 import menuItem from "./menu.config";
 import { useRoute, useRouter } from "vue-router";
+import { useAuthStore } from "../modules/auth/auth.store";
 
 const route = useRoute();
+const authStore = useAuthStore();
 const router = useRouter();
 const menuItems = ref(menuItem);
 </script>
