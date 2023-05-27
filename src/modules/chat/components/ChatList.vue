@@ -33,14 +33,12 @@ import { ref, computed } from "vue";
 import { useChatStore } from "../chat.store";
 import { useRouter } from "vue-router";
 import { Chat } from "../data";
-import mockMessage from "../mockMessages.json";
-
-console.log(mockMessage, "mockMessage");
+// import mockMessage from "../mockMessages.json";
 
 const searchText = ref("");
 const chatStore = useChatStore();
 const router = useRouter();
-// const route = useRoute();
+
 const chats: Chat[] = chatStore.getChats;
 
 const filteredChats = computed(() => {

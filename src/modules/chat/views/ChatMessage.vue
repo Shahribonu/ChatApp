@@ -1,5 +1,7 @@
 <template>
-  <div class="message bg-white w-full h-full">
+  <div
+    class="message flex flex-col justify-between h-full bg-white w-full relative"
+  >
     <div class="bg-gray-50 px-3 py-2">
       <h1 class="text-xl font-semibold">
         {{ chatStore.chatData[Number(route.params.id) - 1].name }}
@@ -7,33 +9,40 @@
       <p class="text-sm">last seen recently</p>
     </div>
 
-    <div class="message-main h-[590px] overflow-y-scroll relative">
-      <ul>
-        <li
-          v-for="message in filteredMockMessages"
-          :key="message.id"
-          class="message-item bg-gray-100 relative px-2 py-3 my-5 mx-4 max-w-[380px] rounded-md"
-          :class="{
-            'bg-green-300': message.is_sender === 'false',
-          }"
-        >
-          {{ message.message }}
-          <p class="absolute bottom-1 right-1 pt-8 text-xs">
-            {{ message.time }}
-          </p>
-        </li>
-      </ul>
-    </div>
-
-    <form
-      @submit.prevent="sendMessage"
-      class="send-message flex align-center justify-between"
-    >
-      <input v-model="newMessage" placeholder="Send messages.." />
-      <div type="submit" class="send-button bg-green-400 p-4 cursor-pointer">
-        <i class="fab fa-telegram-plane" color="white"></i>
+    <div>
+      <div class="message-main max-h-[600px] overflow-y-scroll relative">
+        <ul>
+          <li
+            v-for="message in filteredMockMessages"
+            :key="message.id"
+            class="message-item bg-gray-100 relative px-2 py-3 my-5 mx-4 max-w-[380px] rounded-md"
+            :class="{
+              'bg-green-300 ': message.is_sender === 'false',
+            }"
+          >
+            {{ message.message }}
+            <p class="absolute bottom-1 right-1 pt-8 text-xs">
+              {{ message.time }}
+            </p>
+          </li>
+        </ul>
       </div>
-    </form>
+
+      <div class="">
+        <form
+          @submit.prevent="sendMessage"
+          class="send-message flex align-center justify-between"
+        >
+          <input v-model="newMessage" placeholder="Send messages.." />
+          <div
+            type="submit"
+            class="send-button bg-green-400 p-4 cursor-pointer"
+          >
+            <i class="fab fa-telegram-plane" color="white"></i>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -49,8 +58,6 @@ const newMessage = ref("");
 
 const filteredMockMessages = computed(() => {
   const userId = Number(route.params.id);
-  console.log(userId, "userId");
-
   return mockMessage.filter((message: any) => message.userId == userId);
 });
 
@@ -102,7 +109,7 @@ const sendMessage = () => {
     border-radius: 0 10px 10px 0;
   }
 }
-.message-item {
-  display: block;
-}
+// .message-item {
+//   display: block;
+// }
 </style>

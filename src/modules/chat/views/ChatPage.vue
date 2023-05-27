@@ -1,5 +1,5 @@
 <template>
-  <div class="chat-main bg-white flex flex-column">
+  <div class="chat-main bg-white overflow-hidden flex flex-column">
     <ChatList />
 
     <div class="message">
@@ -14,7 +14,7 @@ import ChatList from "../components/ChatList.vue";
 
 <style scoped>
 .chat-main {
-  height: 100vh;
+  height: calc(100vh - 80px);
   width: 100%;
   position: relative;
 }

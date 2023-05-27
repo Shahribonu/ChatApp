@@ -13,24 +13,27 @@ const router = createRouter({
    {
     path:'/home',
     name: 'home',
-    component:()=>import('../views/Home.vue')
+    component:()=>import('../modules/home/views/Home.vue')
 
    },
    {
     path:'/settings',
     name: 'settings',
-    component:()=>import('../views/Settings.vue')
+    component:()=>import('../modules/settings/views/Settings.vue')
 
    },
+
+   
+    //modules
+    ...authRoute,
+    ...chatRoute,
+
     // 404
     {
       path: '/:pathmatch(.*)*',
       name: '404',
       component: () => import('../views/404.vue')
     },
-    //modules
-    ...authRoute,
-    ...chatRoute
   ]
 })
 
@@ -42,7 +45,7 @@ router.beforeEach((to, from, next) => {
   } else {
     next("/login");
   }
-  console.log(to.meta.layout, 'eeee')
+ 
 });
 
 
