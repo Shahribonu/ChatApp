@@ -1,18 +1,17 @@
 import { defineStore } from 'pinia';
-import { chats, Chat } from '../../data';
+import { chats, Chat } from './data';
 import { ref,Ref } from 'vue';
+import mockData from './mockMessages.json'
+import { IChatMessage } from './types/chatTypes';
 
-interface Message {
-  id: number;
-  sender: string;
-  text: string;
-}
+
 
 export const useChatStore = defineStore('chat', {
   state: () => ({
     chatData: ref(chats) as Ref<Chat[]>,
     currentUser: ref([]) as Ref<Chat[]>,
-    messages: ref([]) as Ref<Message[]>,
+    messages: [] as IChatMessage[],
+
  
   }),
   getters: {
@@ -22,17 +21,19 @@ export const useChatStore = defineStore('chat', {
     getCurrentUser():Chat[]{
       return this.currentUser;
     },
-    getMessages():Message[]{
-      return this.messages;
-    },
+   getMessages: (s) =>s.messages as IChatMessage[]
+
   },
   actions: {
     addCurrentUser(chat:Chat[]) {
       this.currentUser = chat;
     },
-    addMessage(newMessage: Message) {
-      this.messages = [...this.messages, newMessage];
+    addMessage(newMessage: IChatMessage) {
+      this.messages.push(newMessage);
     },
+    fetchChatMessages(){
+      this.messages = mockData
+    }
    
   },
 });

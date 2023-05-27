@@ -40,14 +40,13 @@ const chats: Chat[] = chatStore.getChats;
 
 const filteredChats = computed(() => {
   const searchLowerCase = searchText.value.toLowerCase();
-
   return chats.filter((chat: any) =>
     chat.name.toLowerCase().includes(searchLowerCase)
   );
 });
 
-const selectChat = (chat: any) => {
-  router.push(`/chat/${chat.id}`);
+const selectChat = (chat: Chat) => {
+  router.push(`/chat/messages/${chat.id}`);
 };
 </script>
 

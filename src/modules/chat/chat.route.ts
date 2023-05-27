@@ -1,5 +1,5 @@
 const ChatPage=()=>import('./views/ChatPage.vue')
-const ChatMessage=()=>import('./views/ChatMessage.vue')
+const ChatMessages=()=>import('./views/ChatMessage.vue')
 
 export default [
     {
@@ -8,9 +8,9 @@ export default [
         component: ChatPage,
         children: [
             {
-              path: '/:id',
-              name:ChatMessage,
-              component: ChatMessage
+              path: 'messages/:id',
+              name:'chat-messages',
+              component: ChatMessages
             }
           ]
     },

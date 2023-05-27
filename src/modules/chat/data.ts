@@ -1,20 +1,20 @@
 export interface Chat {
-    id: number;
+    id?: number;
     name: string;
     avatar: string;
     lastMessage: string;
     messages: Object;
-    password: string;
+   
   }
-  
+  const picture = '@/assets/images/profile.png'
   export const chats = [
       {
           id: 1,
           name: "Shahribonu",
-          avatar: "john-doe-avatar.jpg",
+          avatar: "picture",
           lastMessage: "Hello there!",
           messages: ['Hello there!','helloo 1'],
-          password: '123'
+         
         },
         {
           id: 2,
@@ -22,7 +22,7 @@ export interface Chat {
           avatar: "john-doe-avatar.jpg",
           lastMessage: "Hello there!",
           messages: ['Hello there!','helloo 2'],
-          password: '123'
+      
         },
         {
           id: 3,
@@ -30,7 +30,7 @@ export interface Chat {
           avatar: "john-doe-avatar.jpg",
           lastMessage: "Hello there!",
           messages: ['Hello there!','helloo'],
-          password: '123'
+   
         },
         {
           id: 4,
@@ -38,7 +38,7 @@ export interface Chat {
           avatar: "john-doe-avatar.jpg",
           lastMessage: "Hello there!",
           messages: ['Hello there!','helloo'],
-          password: '123'
+   
         },
         {
           id: 5,
@@ -46,6 +46,6 @@ export interface Chat {
           avatar: "john-doe-avatar.jpg",
           lastMessage: "Hello there!",
           messages: ['Hello there!','helloo'],
-          password: '123'
+        
         },
     ];
