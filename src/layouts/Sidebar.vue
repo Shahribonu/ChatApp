@@ -7,7 +7,7 @@
 
     <ul class="py-5 mt-5 relative">
       <li
-        :class="{ 'bg-gray-300': item.childs.includes(route.name as string) }"
+        :class="{ 'bg-gray-100': item.childs.includes(route.name as string) }"
         v-for="item in menuItems"
         :key="item.name"
         @click="router.push({ name: item.routeName })"

@@ -1,6 +1,7 @@
 [
     {
         "id":"1",
+        "userId":"1",
         "message":"How are you",
         "created_at": "2023-05-26",
         "time": "23:27:28",
@@ -9,6 +10,7 @@
     },
     {
         "id": "2",
+        "userId":"2",
         "message": "Lorem ipsum dolor sit amet",
         "created_at": "2023-05-25",
         "time": "09:15:42",
@@ -16,6 +18,7 @@
     },
     {
         "id": "3",
+        "userId":"3",
         "message": "I'm doing well, thank you!",
         "created_at": "2023-05-26",
         "time": "10:43:19",
@@ -23,6 +26,7 @@
     },
     {
         "id": "4",
+        "userId":"4",
         "message": "How was your day?",
         "created_at": "2023-05-26",
         "time": "12:09:57",
@@ -30,9 +34,108 @@
     },
     {
         "id": "5",
+        "userId":"5",
         "message": "My day was good, thanks for asking!",
         "created_at": "2023-05-26",
         "time": "14:36:35",
         "is_sender": "false"
-    }
+    },
+    {
+        "id": "6",
+        "userId":"1",
+        "message": "What are your plans for the weekend?",
+        "created_at": "2023-05-27",
+        "time": "09:55:12",
+        "is_sender": "true"
+        }
+        ,
+        {
+        "id": "7",
+        "userId":"2",
+        "message": "I'm thinking of going hiking with some friends. How about you?",
+        "created_at": "2023-05-27",
+        "time": "11:20:34",
+        "is_sender": "false"
+        }
+        ,
+        {
+        "id": "8",
+        "userId":"3",
+        "message": "That sounds like a great plan! I might visit a new museum in town.",
+        "created_at": "2023-05-27",
+        "time": "13:45:09",
+        "is_sender": "true"
+        }
+        ,
+        {
+        "id": "9",
+        "userId":"4",
+        "message": "Which museum are you planning to visit?",
+        "created_at": "2023-05-27",
+        "time": "15:10:27",
+        "is_sender": "false"
+        }
+        ,
+        {
+        "id": "10",
+        "userId":"5",
+        "message": "I'm interested in checking out the Science and Technology Museum. It's supposed to have some interactive exhibits.",
+        "created_at": "2023-05-27",
+        "time": "16:55:40",
+        "is_sender": "true"
+        },
+        
+        {
+        "id": "11",
+        "userId":"1",
+        "message": "That sounds fascinating! I'll have to add it to my list of places to visit.",
+        "created_at": "2023-05-27",
+        "time": "18:20:14",
+        "is_sender": "false"
+        }
+        ,
+        {
+        "id": "12",
+        "userId":"2",
+        "message": "Definitely! Let me know how it goes if you end up going.",
+        "created_at": "2023-05-27",
+        "time": "20:05:37",
+        "is_sender": "true"
+        }
+        ,
+        {
+        "id": "13",
+        "userId":"3",
+        "message": "Sure, I'll share my experience with you. Have a great weekend!",
+        "created_at": "2023-05-27",
+        "time": "21:40:52",
+        "is_sender": "false"
+        }
+        ,
+        {
+        "id": "14",
+        "userId":"4",
+        "message": "Thank you! You too!",
+        "created_at": "2023-05-27",
+        "time": "22:55:03",
+        "is_sender": "true"
+        }
+        ,
+        {
+        "id": "15",
+        "userId":"5",
+        "message": "Take care and enjoy your museum visit!",
+        "created_at": "2023-05-27",
+        "time": "23:59:59",
+        "is_sender": "false"
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
 ]

@@ -1,7 +1,7 @@
 <template>
-  <div class="w-[250px] h-full border-2 shadow-md bg-white">
+  <div class="chat-list h-full bg-white">
     <input
-      class="border-1 outline-none p-2 text-xl w-[245px] rounded-md"
+      class="chat-list-input outline-none p-2 text-xl h-[60px] w-[245px] rounded-md"
       type="text"
       placeholder="Search... "
       v-model="searchText"
@@ -13,13 +13,14 @@
         :key="index"
         :chat="chat"
         @click="selectChat(chat)"
-        class="shadow-sm mt-4 py-3 px-4 flex align-center bg-gray-100 rounded-md"
+        class="shadow-sm mt-2 py-3 px-4 flex items-center bg-gray-50 rounded-md"
       >
-        <div>
-          <img :src="chat.avatar" />
+        <div class="mr-4">
+          <!-- <img :src="chat.avatar" /> -->
+          <img src="../../../assets/images/girl.png" alt="" />
         </div>
         <div class="content">
-          <div class="title">{{ chat.name }}</div>
+          <div class="title font-semibold">{{ chat.name }}</div>
           <div class="message">{{ chat.lastMessage }}</div>
         </div>
       </li>
@@ -31,7 +32,7 @@
 import { ref, computed } from "vue";
 import { useChatStore } from "../chat.store";
 import { useRouter } from "vue-router";
-import { Chat } from "../../../data";
+import { Chat } from "../data";
 
 const searchText = ref("");
 const chatStore = useChatStore();
@@ -50,4 +51,12 @@ const selectChat = (chat: Chat) => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.chat-list {
+  width: 25%;
+}
+.chat-list-input {
+  border: 1px solid rgba(63, 59, 59, 0.5);
+  width: 100%;
+}
+</style>

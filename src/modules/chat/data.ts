@@ -11,14 +11,14 @@ export interface Chat {
       {
           id: 1,
           name: "Shahribonu",
-          avatar: "picture",
+          avatar: picture,
           lastMessage: "Hello there!",
           messages: ['Hello there!','helloo 1'],
          
         },
         {
           id: 2,
-          name: "Shahribonu 2",
+          name: "Madina",
           avatar: "john-doe-avatar.jpg",
           lastMessage: "Hello there!",
           messages: ['Hello there!','helloo 2'],
@@ -26,7 +26,7 @@ export interface Chat {
         },
         {
           id: 3,
-          name: "Shahribonu 3",
+          name: "Zarifa",
           avatar: "john-doe-avatar.jpg",
           lastMessage: "Hello there!",
           messages: ['Hello there!','helloo'],
@@ -34,7 +34,7 @@ export interface Chat {
         },
         {
           id: 4,
-          name: "Shahribonu 4",
+          name: "Durdona",
           avatar: "john-doe-avatar.jpg",
           lastMessage: "Hello there!",
           messages: ['Hello there!','helloo'],
@@ -42,7 +42,7 @@ export interface Chat {
         },
         {
           id: 5,
-          name: "Shahribonu 5",
+          name: "Sarvinoz",
           avatar: "john-doe-avatar.jpg",
           lastMessage: "Hello there!",
           messages: ['Hello there!','helloo'],

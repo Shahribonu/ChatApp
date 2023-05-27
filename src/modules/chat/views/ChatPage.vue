@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-column">
+  <div class="chat-main bg-white flex flex-column">
     <ChatList />
 
-    <div>
+    <div class="message">
       <RouterView />
     </div>
   </div>
@@ -12,4 +12,13 @@
 import ChatList from "../components/ChatList.vue";
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.chat-main {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.message {
+  width: 75%;
+}
+</style>
